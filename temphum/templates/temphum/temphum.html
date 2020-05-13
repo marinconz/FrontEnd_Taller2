@@ -3,12 +3,28 @@
 <div class="container">
     <form method="get">
         <input type="number" name="value">
+        <input type="number" name="latitud">
+        <input type="number" name="longitud">
+        <input type="text" name="tipo_Terreno">
         <button type="submit">Adicionar</button>
     </form>
-    {% for temphum in temphums %}
-    <ul class="list-group">
-        <li class="list-group-item">{{temphum.type}} = {{temphum.value}}</li>
-    </ul>
-    {% endfor %}
+    
+    <table class = "table">
+        <thead>          
+            <th scope = "col">Temphum</th>
+            <th scope = "col">Latitud</th>
+            <th scope = "col">Longitud</th>
+            <th scope = "col">Tipo de terreno</th>
+        </thead>
+        {% for temphum in temphums %}
+        <tbody class = "list-group">
+            <td>{{temphum.value}}</td>
+            <td>{{temphum.latitud}}</td>
+            <td>{{temphum.longitud}}</td>
+            <td>{{temphum.tipo_Terreno}}</td>
+        </tbody>
+        {% endfor %}
+     </table>   
+    
 </div>
 {% endblock %}
