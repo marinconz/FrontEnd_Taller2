@@ -13,12 +13,12 @@ def temphum(request):
         if value:
             # Crea el json para realizar la petición POST al Web Service
             args = {'type': 'agua', 'value': value, 'longitud':longitud, 'latitud':latitud, 'tipo_Terreno':tipo_Terreno}
-            response = requests.post('http://127.0.0.1:8000/temphum/', args)
+            response = requests.post('http://pi1-eafit-marinconz.azurewebsites.net/temphum/', args)
             # Convierte la respuesta en JSON
             measure_json = response.json()
 
     # Realiza una petición GET al Web Services
-    response = requests.get('http://127.0.0.1:8000/temphum/')
+    response = requests.get('http://pi1-eafit-marinconz.azurewebsites.net/temphum/')
     # Convierte la respuesta en JSON
     temphum = response.json()
     
